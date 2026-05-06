@@ -11,7 +11,7 @@
 /* globals Icons, Templates, Palettes */
 
 // ── API base (update this after deploying the tracker to Vercel) ─────────────
-var API_BASE = 'https://github-streak-tracker.vercel.app';
+var API_BASE = 'https://github-streak-tracker-for-all.vercel.app';
 
 // ── Font stacks ───────────────────────────────────────────────────────────────
 var FONT_STACKS = {
