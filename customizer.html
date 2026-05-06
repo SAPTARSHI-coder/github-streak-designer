@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Streak.Studio — Customizer</title>
+  <meta name="description" content="Live GitHub streak card editor. Customize template, palette, font, layout and copy your README link."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/customizer.css"/>
+</head>
+<body>
+<div class="app">
+
+  <!-- ── Header ────────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="index.html" class="logo-back">&#8592; Templates</a>
+        <div class="logo">Streak<span class="logo-dot">.</span>Studio</div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-ghost" id="btn-copy-url">Copy URL</button>
+        <button class="btn btn-solid" id="btn-copy-svg">Copy SVG</button>
+        <button class="btn btn-accent" id="btn-copy-link">Copy README Link</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Main split ─────────────────────────────────────────────────────────── -->
+  <div class="main">
+
+    <!-- ── Left: Preview ─────────────────────────────────────────────────────── -->
+    <div class="preview-panel">
+      <div class="preview-label">Live Preview</div>
+      <div class="preview-stage">
+        <div id="preview-wrap"></div>
+      </div>
+      <div id="toast"></div>
+    </div>
+
+    <!-- ── Right: Controls ───────────────────────────────────────────────────── -->
+    <div class="controls-panel">
+      <div class="controls-inner">
+
+        <!-- 1. Template -->
+        <div class="section">
+          <div class="section-hd">Template</div>
+          <div class="tmpl-grid">
+
+            <button class="tmpl-btn active" data-template="ember">
+              <svg viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg">
+                <rect width="495" height="195" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                <text x="247" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#8b949e">Ember</text>
+                <line x1="20" y1="28" x2="475" y2="28" stroke="#21262d" stroke-width="1"/>
+                <line x1="165" y1="28" x2="165" y2="175" stroke="#21262d" stroke-width="1"/>
+                <line x1="330" y1="28" x2="330" y2="175" stroke="#21262d" stroke-width="1"/>
+                <text x="82" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#3fb950">492</text>
+                <text x="248" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#f78166">4d</text>
+                <text x="413" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#58a6ff">15d</text>
+              </svg>
+              <div class="tmpl-label">Ember</div>
+            </button>
+
+            <button class="tmpl-btn" data-template="frost">
+              <svg viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg">
+                <rect width="495" height="195" rx="12" fill="#0f1923" stroke="#1e2d3d" stroke-width="1"/>
+                <line x1="20" y1="30" x2="475" y2="30" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.6"/>
+                <text x="247" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#94a3b8">Frost</text>
+                <line x1="165" y1="30" x2="165" y2="175" stroke="#1e2d3d" stroke-width="1"/>
+                <line x1="330" y1="30" x2="330" y2="175" stroke="#1e2d3d" stroke-width="1"/>
+                <text x="82" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="24" font-weight="600" fill="#34d399">492</text>
+                <text x="248" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="24" font-weight="600" fill="#38bdf8">4d</text>
+                <text x="413" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="24" font-weight="600" fill="#a78bfa">15d</text>
+              </svg>
+              <div class="tmpl-label">Frost</div>
+            </button>
+
+            <button class="tmpl-btn" data-template="neon">
+              <svg viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="tng"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <rect width="495" height="195" rx="8" fill="#050505" stroke="#39ff14" stroke-width="1.5"/>
+                <text x="247" y="20" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="11" fill="#39ff14" letter-spacing="1">NEON</text>
+                <line x1="20" y1="28" x2="475" y2="28" stroke="#1a3300" stroke-width="1"/>
+                <line x1="165" y1="28" x2="165" y2="175" stroke="#1a3300" stroke-width="1"/>
+                <line x1="330" y1="28" x2="330" y2="175" stroke="#1a3300" stroke-width="1"/>
+                <text x="82" y="110" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="24" font-weight="700" fill="#39ff14" filter="url(#tng)">492</text>
+                <text x="248" y="110" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="24" font-weight="700" fill="#ff2d78" filter="url(#tng)">4d</text>
+                <text x="413" y="110" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="24" font-weight="700" fill="#00f5ff" filter="url(#tng)">15d</text>
+              </svg>
+              <div class="tmpl-label">Neon</div>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- 2. Layout -->
+        <div class="section">
+          <div class="section-hd">Layout</div>
+          <div class="layout-row">
+            <button class="layout-btn active" data-layout="row">
+              <span class="layout-icon">&#9776;</span>Row
+            </button>
+            <button class="layout-btn" data-layout="stacked">
+              <span class="layout-icon">&#9≡;</span>Stacked
+            </button>
+            <button class="layout-btn" data-layout="hero">
+              <span class="layout-icon">&#9673;</span>Hero
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Palette -->
+        <div class="section">
+          <div class="section-hd">Color Palette</div>
+          <div class="palette-row">
+            <button class="palette-btn active" data-palette="dark">
+              <span class="swatch" style="--s-bg:#0d1117;--s-border:#30363d;background:#0d1117;border-color:#f78166;"></span>
+              <span class="swatch-name">Dark</span>
+            </button>
+            <button class="palette-btn" data-palette="dracula">
+              <span class="swatch" style="background:#282a36;border-color:#ff79c6;"></span>
+              <span class="swatch-name">Dracula</span>
+            </button>
+            <button class="palette-btn" data-palette="catppuccin">
+              <span class="swatch" style="background:#1e1e2e;border-color:#cba6f7;"></span>
+              <span class="swatch-name">Catppuc.</span>
+            </button>
+            <button class="palette-btn" data-palette="nord">
+              <span class="swatch" style="background:#2e3440;border-color:#88c0d0;"></span>
+              <span class="swatch-name">Nord</span>
+            </button>
+            <button class="palette-btn" data-palette="light">
+              <span class="swatch" style="background:#ffffff;border-color:#cf222e;"></span>
+              <span class="swatch-name">Light</span>
+            </button>
+            <button class="palette-btn" data-palette="custom">
+              <span class="swatch" style="background:conic-gradient(#f78166,#58a6ff,#3fb950,#f78166);border-color:#555;"></span>
+              <span class="swatch-name">Custom</span>
+            </button>
+          </div>
+
+          <!-- Custom color pickers (hidden unless palette=custom) -->
+          <div id="custom-panel" hidden>
+            <div class="color-grid">
+              <div class="color-row"><label>Background</label>    <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-bg"           value="#0d1117"/><input type="text" class="color-hex" id="cc-bg-hex"           value="#0d1117" maxlength="7"/></div></div>
+              <div class="color-row"><label>Border</label>        <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-border"       value="#30363d"/><input type="text" class="color-hex" id="cc-border-hex"       value="#30363d" maxlength="7"/></div></div>
+              <div class="color-row"><label>Title text</label>    <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-title"        value="#8b949e"/><input type="text" class="color-hex" id="cc-title-hex"        value="#8b949e" maxlength="7"/></div></div>
+              <div class="color-row"><label>Value text</label>    <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-value"        value="#e6edf3"/><input type="text" class="color-hex" id="cc-value-hex"        value="#e6edf3" maxlength="7"/></div></div>
+              <div class="color-row"><label>Accent (streak)</label><div class="color-input-wrap"><input type="color" class="color-pick" id="cc-accent"      value="#f78166"/><input type="text" class="color-hex" id="cc-accent-hex"      value="#f78166" maxlength="7"/></div></div>
+              <div class="color-row"><label>Alt (longest)</label>  <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-accentAlt"   value="#58a6ff"/><input type="text" class="color-hex" id="cc-accentAlt-hex"   value="#58a6ff" maxlength="7"/></div></div>
+              <div class="color-row"><label>Green (total)</label>  <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-accentGreen" value="#3fb950"/><input type="text" class="color-hex" id="cc-accentGreen-hex" value="#3fb950" maxlength="7"/></div></div>
+              <div class="color-row"><label>Subtext</label>        <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-subtext"     value="#6e7681"/><input type="text" class="color-hex" id="cc-subtext-hex"     value="#6e7681" maxlength="7"/></div></div>
+              <div class="color-row"><label>Divider</label>        <div class="color-input-wrap"><input type="color" class="color-pick" id="cc-divider"     value="#21262d"/><input type="text" class="color-hex" id="cc-divider-hex"     value="#21262d" maxlength="7"/></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Font -->
+        <div class="section">
+          <div class="section-hd">Font</div>
+          <div class="font-row">
+            <button class="font-btn active" data-font="inter" style="font-family:'Inter',sans-serif">Inter</button>
+            <button class="font-btn" data-font="jetbrains" style="font-family:'JetBrains Mono',monospace">JetBrains</button>
+            <button class="font-btn" data-font="spacegrotesk" style="font-family:'Space Grotesk',sans-serif">Space Grotesk</button>
+            <button class="font-btn" data-font="mono" style="font-family:monospace">System Mono</button>
+          </div>
+        </div>
+
+        <!-- 5. Border -->
+        <div class="section">
+          <div class="section-hd">Border</div>
+
+          <div class="ctrl-group">
+            <label>Corner radius <span class="val-badge" id="radius-val">10px</span></label>
+            <input type="range" class="slider" id="ctrl-radius" min="0" max="24" value="10"/>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Border width <span class="val-badge" id="border-width-val">1px</span></label>
+            <input type="range" class="slider" id="ctrl-border-width" min="0" max="4" value="1" step="0.5"/>
+          </div>
+
+          <div class="ctrl-group">
+            <label>Border style</label>
+            <div class="style-row">
+              <button class="border-style-btn active" data-style="solid">Solid</button>
+              <button class="border-style-btn" data-style="dashed">Dashed</button>
+              <button class="border-style-btn" data-style="none">None</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Preview data -->
+        <div class="section">
+          <div class="section-hd">Preview Data</div>
+          <div class="num-row">
+            <div class="num-group">
+              <label>Total</label>
+              <input type="number" class="num-input" id="ctrl-total" value="1247" min="0"/>
+            </div>
+            <div class="num-group">
+              <label>Current</label>
+              <input type="number" class="num-input" id="ctrl-current" value="42" min="0"/>
+            </div>
+            <div class="num-group">
+              <label>Longest</label>
+              <input type="number" class="num-input" id="ctrl-longest" value="87" min="0"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Username -->
+        <div class="section">
+          <div class="section-hd">GitHub Username</div>
+          <input type="text" class="input" id="ctrl-username" placeholder="your-github-username" value="SAPTARSHI-coder"/>
+        </div>
+
+      </div><!-- /.controls-inner -->
+    </div><!-- /.controls-panel -->
+
+  </div><!-- /.main -->
+
+  <!-- ── Bottom bar ────────────────────────────────────────────────────────── -->
+  <div class="bottom-bar">
+    <div class="url-preview" id="url-preview">https://github-streak-tracker.vercel.app/streak?username=SAPTARSHI-coder&amp;template=ember&amp;palette=dark</div>
+    <button class="btn btn-ghost" id="btn-copy-url-bar">Copy URL</button>
+    <button class="btn btn-accent" id="btn-copy-link-bar">Copy README</button>
+  </div>
+
+</div><!-- /.app -->
+
+<!-- ── Scripts: load order matters ───────────────────────────────────────────
+     icons → templates (ember/frost/neon) → index → palettes → customizer
+-->
+<script src="js/icons.js"></script>
+<script src="js/templates/ember.js"></script>
+<script src="js/templates/frost.js"></script>
+<script src="js/templates/neon.js"></script>
+<script src="js/templates/index.js"></script>
+<script src="js/palettes.js"></script>
+<script src="js/customizer.js"></script>
+
+<script>
+  // Wire up the bottom-bar duplicate buttons
+  document.getElementById('btn-copy-url-bar').addEventListener('click', function () {
+    document.getElementById('btn-copy-url').click();
+  });
+  document.getElementById('btn-copy-link-bar').addEventListener('click', function () {
+    document.getElementById('btn-copy-link').click();
+  });
+</script>
+
+</body>
+</html>
